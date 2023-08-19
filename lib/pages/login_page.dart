@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:el_dolarazo/components/my_button.dart';
 import 'package:el_dolarazo/components/my_textfield.dart';
@@ -11,7 +12,12 @@ class LoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // sign user in method
-  void signUserIn() {}
+  void signUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: usernameController.text,
+      password: passwordController.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -114,10 +120,9 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 50),
 
-            
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children:  [
+                children: [
                   // google button
                   SquareTile(imagePath: 'lib/images/google.png'),
 
