@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "256889813364",
+    "project_id": "eldolarazo-3129e",
+    "storage_bucket": "eldolarazo-3129e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256889813364:android:9ed106d6101018515bd421",
+        "android_client_info": {
+          "package_name": "com.example.el_dolarazo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "256889813364-m9p6gru1d13eqo4emho51tjji5f5ah1l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY7n37LOcWBQdoJZrfU5jOWTqhsbbuLHs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "256889813364-m9p6gru1d13eqo4emho51tjji5f5ah1l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "256889813364-411mlkdt37413hlc7hjd3kd2tv9d6cj9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.elDolarazo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
