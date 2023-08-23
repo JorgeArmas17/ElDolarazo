@@ -74,6 +74,7 @@ class FormularioPage extends StatelessWidget {
                   }
                   return null;
                 },
+
                 decoration: InputDecoration(labelText: 'Correo Electrónico'),
               ),
               SizedBox(height: 40.0),
