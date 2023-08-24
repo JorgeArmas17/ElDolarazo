@@ -84,9 +84,7 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               // sign in button
-              MyButton(
-                onTap: signUserIn,
-              ),
+              MyButton(text: "Iniciar Sesión", onTap: signUserIn),
 
               const SizedBox(height: 50),
 
@@ -139,16 +137,13 @@ class LoginPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Not a member?',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
+                  Text('No tienes cuenta?'),
                   const SizedBox(width: 4),
-                  const Text(
-                    'Register now',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    child: Text(
+                      'Registrate',
+                      style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
