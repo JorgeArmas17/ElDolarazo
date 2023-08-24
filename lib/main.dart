@@ -1,3 +1,4 @@
+import 'package:el_dolarazo/pages/formulario.dart';
 import 'package:el_dolarazo/pages/login_page.dart';
 import 'package:el_dolarazo/pages/menu.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -17,11 +18,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
-      
     );
   }
- 
 }
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
