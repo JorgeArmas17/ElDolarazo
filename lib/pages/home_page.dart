@@ -27,13 +27,14 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => FormularioPage()),
+              MaterialPageRoute(builder: (context) => RestauranteForm()),
             );
           },
           style: ElevatedButton.styleFrom(
             primary: Colors.blue,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0), // Cambia el valor para ajustar la curvatura
+              borderRadius: BorderRadius.circular(
+                  8.0), // Cambia el valor para ajustar la curvatura
             ),
           ),
           child: Padding(
