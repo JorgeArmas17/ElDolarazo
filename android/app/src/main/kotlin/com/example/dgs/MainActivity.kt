@@ -1,4 +1,4 @@
-package com.example.el_dolarazo
+package com.example.dgs
 
 import io.flutter.embedding.android.FlutterActivity
 

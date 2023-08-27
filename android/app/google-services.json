@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "633269678875",
+    "project_id": "dswadi2",
+    "storage_bucket": "dswadi2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633269678875:android:d08eb2fbd8815aa8ea19be",
+        "android_client_info": {
+          "package_name": "com.example.dgs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633269678875-skgsrrbc22p233c0oqvh5l61t2f6sftt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6MuoQM1liCC9LmM9CjuCDu4OWMvk3CJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633269678875-skgsrrbc22p233c0oqvh5l61t2f6sftt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
