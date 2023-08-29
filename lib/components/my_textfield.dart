@@ -24,7 +24,6 @@ class MyTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         obscureText: obscureText,
-        maxLength: validateMaxLength(),
         validator: (String? value) {
           return validateStructure(value);
         },
@@ -59,6 +58,8 @@ class MyTextField extends StatelessWidget {
       switch (validateText) {
         case ValidateText.email:
           return validateEmail(value!) ? null : "Email incorrecto";
+        case ValidateText.password:
+          return value!.length >= 6 ? null : "Debe tener más de 6 caracteres";
         default:
           return null;
       }
