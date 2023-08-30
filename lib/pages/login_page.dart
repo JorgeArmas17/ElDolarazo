@@ -3,8 +3,10 @@ import 'package:dgs/components/my_textfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'forgot_you_password.dart';
+
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  LoginPage({super.key, required Null Function() onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -109,18 +111,29 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: true,
               ),
 
-              const SizedBox(height: 10),
               //forgot password
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Forgot Password!',
-                      style: TextStyle(color: Colors.grey[600]),
-                    )
-                  ],
+                child: InkWell(
+                  onTap: () {
+                    // Aquí rediriges a la otra pantalla
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ForgotPassScreen()));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Recuperar Contraseña',
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
