@@ -36,7 +36,7 @@ class ForgotPassScreen extends StatelessWidget {
           MaterialButton(
             minWidth: size.width * .5,
             height: 50,
-            color: Colors.purple,
+            color: Colors.orange,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             onPressed: () async {
