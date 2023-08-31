@@ -1,0 +1,1 @@
+enum ValidateText { email, password }

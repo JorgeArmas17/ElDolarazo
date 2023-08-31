@@ -1,3 +1,5 @@
+import 'package:dgs/common/enums.dart';
+import 'package:dgs/components/my_textformfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final userNameController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmpasswordController = TextEditingController();
+  GlobalKey<FormState> keyFrom = GlobalKey<FormState>();
   //sign user up method
   void signUserUp() async {
     showDialog(
@@ -65,78 +68,88 @@ class _RegisterPageState extends State<RegisterPage> {
       backgroundColor: Color(0xffD6E2EA),
       body: SafeArea(
         child: Center(
-          child: SingleChildScrollView(
-            child: Column(children: [
-              const SizedBox(height: 25),
-              //logo
-              const Icon(
-                Icons.app_registration,
-                size: 150,
-              ),
-
-              const SizedBox(height: 10),
-              //welcome back, you've been mised
-              Text(
-                'Forma parte de esta Comunidad',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 16,
+          child: Form(
+            key: keyFrom,
+            child: SingleChildScrollView(
+              child: Column(children: [
+                const SizedBox(height: 25),
+                //logo
+                const Icon(
+                  Icons.app_registration,
+                  size: 150,
                 ),
-              ),
 
-              const SizedBox(height: 25),
-
-              //username textfield
-              MyTextField(
-                controller: userNameController,
-                hintText: 'Email',
-                obscureText: false,
-              ),
-
-              const SizedBox(height: 10),
-
-              MyTextField(
-                controller: passwordController,
-                hintText: 'Contraseña',
-                obscureText: true,
-              ),
-
-              const SizedBox(height: 10),
-              //password textfield
-              MyTextField(
-                controller: confirmpasswordController,
-                hintText: 'Confirmar Contraseña',
-                obscureText: true,
-              ),
-
-              const SizedBox(height: 25),
-
-              //sign in button
-              MyButton(
-                onTap: signUserUp,
-                text: 'Registrate',
-              ),
-
-              const SizedBox(height: 50),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Ya tienes cuenta?'),
-                  const SizedBox(width: 4),
-                  GestureDetector(
-                    onTap: widget.onTap,
-                    child: Text(
-                      'Iniciar Sesión',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
-                    ),
+                const SizedBox(height: 10),
+                //welcome back, you've been mised
+                Text(
+                  'Forma parte de esta Comunidad',
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 16,
                   ),
-                ],
-              )
+                ),
 
-              //not a member? register now
-            ]),
+                const SizedBox(height: 25),
+
+                //username textfield
+                MyTextFormField(
+                  userNameController,
+                  'Email',
+                  false,
+                  validateText: ValidateText.email,
+                ),
+
+                const SizedBox(height: 10),
+
+                MyTextFormField(
+                  passwordController,
+                  'Contraseña',
+                  true,
+                  validateText: ValidateText.password,
+                ),
+
+                const SizedBox(height: 10),
+                //password textfield
+                MyTextFormField(
+                  passwordController,
+                  'Contraseña',
+                  true,
+                  validateText: ValidateText.password,
+                ),
+
+                const SizedBox(height: 25),
+
+                //sign in button
+                MyButton(
+                  onTap: () {
+                    if (keyFrom.currentState!.validate()) {
+                      signUserUp();
+                    }
+                  },
+                  text: 'Registrate',
+                ),
+
+                const SizedBox(height: 50),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Ya tienes cuenta?'),
+                    const SizedBox(width: 4),
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: Text(
+                        'Iniciar Sesión',
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                )
+
+                //not a member? register now
+              ]),
+            ),
           ),
         ),
       ),
