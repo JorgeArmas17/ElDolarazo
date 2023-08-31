@@ -1,5 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:dgs/pages/platosform.dart';
+import 'package:dgs/pages/platosview.dart';
+import 'package:dgs/pages/redesociales.dart';
 import 'package:dgs/pages/restaurantform.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +44,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final List<Widget> _screens = [
     RestauranteForm(),
     DishForm(),
+    Dish(),
+    SocialMediaPage(),
   ];
 
   @override
