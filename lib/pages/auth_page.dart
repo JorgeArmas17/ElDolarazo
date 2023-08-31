@@ -1,4 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:dgs/pages/platosform.dart';
+import 'package:dgs/pages/restaurantform.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +39,10 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = [];
+  final List<Widget> _screens = [
+    RestauranteForm(),
+    DishForm(),
+  ];
 
   @override
   Widget build(BuildContext context) {
